@@ -14,6 +14,7 @@ Deno.serve((req) => {
     // Otherwise, serve the current dir
     return serveDir(req, {
         enableCors: true,
+        showDirListing: true,
         showDotfiles: false,
     });
 });
