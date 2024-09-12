@@ -17,9 +17,13 @@ jobs:
         run: |
           mkdir -p out
           curl --retry 2 --fail https://api.csswg.org/bikeshed/ --output out/index.html --header "Accept: text/plain, text/html" -F die-on=fatal -F file=@"index.bs"
+
+      - name: Copy file_server.ts
+        run: cp .github/workflows/file_server.ts out/.file_server.ts
+
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
           project: "proposal-common-min-api"
-          entrypoint: "https://deno.land/std@0.134.0/http/file_server.ts"
+          entrypoint: ".file_server.ts"
           root: out/
