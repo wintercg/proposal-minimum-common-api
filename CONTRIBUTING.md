@@ -1,4 +1,4 @@
-# Common Minimum API proposal
+# Minimum Common API proposal
 
 ## Building the spec
 

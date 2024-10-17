@@ -1,11 +1,11 @@
 <pre class='metadata'>
 Title: Minimum Common Web Platform API
-Shortname: common-web-platform-api
+Shortname: minimum-common-api
 Group: wintercg
 Status: w3c/CG-DRAFT
 Level: none
 URL: https://common-min-api.proposal.wintercg.org/
-Repository: https://github.com/wintercg/proposal-common-minimum-api
+Repository: https://github.com/wintercg/proposal-minimum-common-api
 Editor: James M Snell, Cloudflare https://cloudflare.com/, jsnell@cloudflare.com
 Abstract: Minimum Common Web Platform API for Non-Browser ECMAScript-based runtimes.
 Markup Shorthands: markdown yes
