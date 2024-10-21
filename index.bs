@@ -4,7 +4,7 @@ Shortname: minimum-common-api
 Group: wintercg
 Status: w3c/CG-DRAFT
 Level: none
-URL: https://common-min-api.proposal.wintercg.org/
+URL: https://min-common-api.proposal.wintercg.org/
 Repository: https://github.com/wintercg/proposal-minimum-common-api
 Editor: James M Snell, Cloudflare https://cloudflare.com/, jsnell@cloudflare.com
 Abstract: Minimum Common Web Platform API for Non-Browser ECMAScript-based runtimes.

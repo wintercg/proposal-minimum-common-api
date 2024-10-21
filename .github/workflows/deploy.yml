@@ -20,6 +20,6 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "proposal-common-min-api"
+          project: "proposal-min-common-api"
           entrypoint: "https://deno.land/std@0.134.0/http/file_server.ts"
           root: out/
