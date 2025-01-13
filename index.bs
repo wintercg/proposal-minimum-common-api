@@ -105,8 +105,6 @@ Global methods / properties:
 * globalThis.{{WebAssembly}}.{{WebAssembly/instantiateStreaming()}}
 * globalThis.{{WebAssembly}}.{{WebAssembly/validate()}}
 
-Note: This list includes APIs defined in [[FETCH]]. The WinterCG is currently working on a fork of this spec to better fulfill the needs of web-interoperable runtimes, and such runtimes should follow this fork instead. See <a href="https://fetch.spec.wintercg.org">https://fetch.spec.wintercg.org</a>.
-
 The Global Scope {#global-scope}
 ================================
 
