@@ -75,6 +75,7 @@ Interfaces:
 * {{TransformStream}}
 * {{TransformStreamDefaultController}}
 * {{URL}}
+* {{URLPattern}}
 * {{URLSearchParams}}
 * {{WebAssembly}}.<l spec="wasm-js-api">{{Global}}</l>
 * {{WebAssembly}}.<l spec="wasm-js-api">{{Instance}}</l>
