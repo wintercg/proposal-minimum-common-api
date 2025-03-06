@@ -46,6 +46,7 @@ Interfaces:
 * {{CountQueuingStrategy}}
 * {{Crypto}}
 * {{CryptoKey}}
+* {{CustomEvent}}
 * <code class="idl"><a data-link-type="idl" href="https://wicg.github.io/compression/#decompression-stream">DecompressionStream</a></code>
 * {{DOMException}}
 * {{Event}}
@@ -98,6 +99,15 @@ Global methods / properties:
 * globalThis.{{performance}}.{{Performance/now()}}
 * globalThis.{{performance}}.{{timeOrigin}}
 * globalThis.{{queueMicrotask()}}
+* globalThis.{{reportError()}}
+* globalThis.self (on {{Window/self|Window}} and {{WorkerGlobalScope/self|WorkerGlobalScope}})
+
+    Note: This returns the value of `globalThis`.
+
+    Issue: When the <a href="https://github.com/whatwg/html/pull/9893">ShadowRealm integration PR</a>
+    is merged into the HTML spec,
+    `self` will also need to be exposed on `ShadowRealmGlobalScope`.
+
 * globalThis.{{setTimeout()}} / globalThis.{{clearTimeout()}}
 * globalThis.{{setInterval()}} / globalThis.{{clearInterval()}}
 * globalThis.{{structuredClone()}}
