@@ -84,6 +84,7 @@ Interfaces:
 * {{WebAssembly}}.<l spec="wasm-js-api">{{Table}}</l>
 * {{WritableStream}}
 * {{WritableStreamDefaultController}}
+* {{WritableStreamDefaultWriter}}
 
 Global methods / properties:
 
