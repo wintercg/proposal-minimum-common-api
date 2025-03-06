@@ -48,6 +48,7 @@ Interfaces:
 * {{CryptoKey}}
 * <code class="idl"><a data-link-type="idl" href="https://wicg.github.io/compression/#decompression-stream">DecompressionStream</a></code>
 * {{DOMException}}
+* {{ErrorEvent}}
 * {{Event}}
 * {{EventTarget}}
 * {{File}}
@@ -59,6 +60,7 @@ Interfaces:
     Cloudflare Workers ignores all parameters.
 
 * {{Headers}}
+* {{PromiseRejectionEvent}}
 * {{ReadableByteStreamController}}
 * {{ReadableStream}}
 * {{ReadableStreamBYOBReader}}
@@ -95,6 +97,9 @@ Global methods / properties:
 * globalThis.{{crypto}}
 * globalThis.{{fetch()}}
 * globalThis.{{navigator}}.{{userAgent}}
+* globalThis.onerror (on {{GlobalEventHandlers/onerror|Window}} and {{WorkerGlobalScope/onerror|WorkerGlobalScope}})
+* globalThis.onunhandledrejection (on {{WindowEventHandlers/onunhandledrejection|Window}} and {{WorkerGlobalScope/onunhandledrejection|WorkerGlobalScope}})
+* globalThis.onrejectionhandled (on {{WindowEventHandlers/onrejectionhandled|Window}} and {{WorkerGlobalScope/onrejectionhandled|WorkerGlobalScope}})
 * globalThis.{{performance}}.{{Performance/now()}}
 * globalThis.{{performance}}.{{timeOrigin}}
 * globalThis.{{queueMicrotask()}}
@@ -113,6 +118,12 @@ The Global Scope {#global-scope}
 The exact type of the global scope (`globalThis`) can vary across runtimes. Most Web Platform APIs are defined in terms that assume Web Browser environments that specifically expose types like {{Window}}, {{Worker}}, {{WorkerGlobalScope}}, and so forth. To simplify conformance, all Interfaces, methods, and properties defined by this specification MUST be exposed on the runtime's relevant global scope (e,g., `globalThis.crypto`, `globalThis.ReadableStream`, etc).
 
 With many runtimes, adding a new global-scoped property can introduce breaking changes when the new global conflicts with existing application code. Many Web Platform APIs define global properties using the `readonly` attribute. To avoid introducing breaking changes, runtimes conforming to this specification MAY choose to ignore the `readonly` attribute for properties being added to the global scope.
+
+The global object on {{Window}}-like and worker environments must always be an instance of {{EventTarget}}. Web-interoperable runtimes must follow the <a>report an exception</a> algorithm, and the JavaScript <a href="https://tc39.es/ecma262/#sec-host-promise-rejection-tracker">HostPromiseRejectionTracker</a> host hook, as defined in [[HTML]]. This includes firing the {{Window/error}}, {{Window/unhandledrejection}} and {{Window/rejectionhandled}} events on the global object.
+
+Note: Some runtimes might not support firing those events following the HTML specification exactly due to legacy reasons.
+For example, in Node.js the global object does not implement {{EventTarget}}, and the relevant events are fired on the `process` object with the names `uncaughtException`, `unhandledRejection` and `rejectionHandled`, respectively.
+Such runtimes should not support the {{GlobalEventHandlers/onerror}}, {{WindowEventHandlers/onunhandledrejection}} and {{WindowEventHandlers/onrejectionhandled}} global properties, but they might implement the {{ErrorEvent}} and {{PromiseRejectionEvent}} interfaces.
 
 Requirements for navigator.userAgent {#navigator-useragent-requirements}
 ========================================================================
